@@ -1,0 +1,39 @@
+select * from Customers;
+
+select distinct country from customers;
+
+select * from customers where CustomerID like '%Bl%';
+
+select top 100 * from Orders;
+
+select * from Customers where PostalCode='1010' or PostalCode='3012' or PostalCode = '12209' or PostalCode= '05023';
+
+select * from Orders where ShipRegion is not null;
+
+select * from Customers order by country, city;
+
+insert into Customers(CustomerID,CompanyName,ContactName,ContactTitle, Address,City,Region,PostalCode,Country,Phone,fax)
+values('ASDFA', 'Grand Circus', 'Lexi Williams','Student','1570 Woodward Ave', 'Detroit', null, '48226', 'United States', '3133382780',null);
+
+update orders set shipregion='EuroZone' where ShipCountry='France'; 
+
+delete from [Order Details] where quantity=1;
+
+select avg(quantity) from [Order Details];
+select max(quantity) from [Order Details];
+select min(quantity) from [Order Details];
+
+select avg(quantity) from [Order Details] group by OrderID;
+select max(quantity) from [Order Details] group by OrderID;
+select min(quantity) from [Order Details] group by OrderID;
+
+select customerid from Orders where OrderID='10290';
+
+select * from Customers inner join orders on Customers.CustomerID =Orders.CustomerID; 
+select * from Customers right join orders on Customers.CustomerID =Orders.CustomerID;
+select * from Customers left join orders on Customers.CustomerID =Orders.CustomerID;
+
+select FirstName from Employees where ReportsTo is null;
+
+select FirstName from Employees where ReportsTo =2;
+
